@@ -32,6 +32,7 @@
                 </div>
             </div>
         </div>
+        <div class="clearfix"></div>
         <div class="movies-list">
             <dl class="movie-list">
                 <dd v-for="(item, index) in hotList.hot" :key="index">
@@ -81,9 +82,12 @@
 </script>
 
 <style lang="less" scoped>
+.clearfix{
+  clear: both;
+}
 .list {
-  width: 1120px;
-  margin: auto;
+  width: 20rem;
+  margin:0 auto;
   padding-bottom: 20px;
   overflow: hidden;
   .movies-panel {
@@ -129,14 +133,16 @@
   }
   .movies-list {
       overflow: hidden;
-    margin-top: 20px;
     dl {
-      display: block;
-      margin: -29px 0 20px -25px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin: 0px 0 20px 0;
     }
     .movie-list {
       dd {
-         margin: 30px 0 0 30px;
+        margin: 30px 0  0;
         display: inline-block;
         vertical-align: top;
         position: relative;
