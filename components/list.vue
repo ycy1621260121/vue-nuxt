@@ -5,19 +5,19 @@
                 <div class="cat-sorter">
                     <ul>
                         <li>
-                            <span class="sort-control-group" data-act="sort-click" data-val="{tagId: 1 }" style="cursor: default">
+                            <span class="sort-control-group" data-act="sort-click" data-val="{tagId: 1 }" style="cursor: default" @click="toparent('')">
                                 <span class="sort-control sort-radio sort-radio-checked"></span>
                                 <span class="sort-control-label">按热门排序</span>
                             </span>
                         </li>
                         <li>
-                            <span class="sort-control-group" data-act="sort-click" data-val="{tagId: 2 }" data-href="?sortId=2" onclick="location.href=this.getAttribute('data-href')">
+                            <span class="sort-control-group" data-act="sort-click" data-val="{tagId: 2 }" data-href="?sortId=rt" @click="toparent('rt')">
                                 <span class="sort-control sort-radio"></span>
                                 <span class="sort-control-label">按时间排序</span>
                             </span>
                         </li>
                         <li>
-                            <span class="sort-control-group" data-act="sort-click" data-val="{tagId: 3 }" data-href="?sortId=3" onclick="location.href=this.getAttribute('data-href')">
+                            <span class="sort-control-group" data-act="sort-click" data-val="{tagId: 3 }" data-href="?sortId=mk" @click="toparent('mk')">
                                 <span class="sort-control sort-radio"></span>
                                 <span class="sort-control-label">按评价排序</span>
                             </span>
@@ -25,7 +25,7 @@
                     </ul>
                 </div>
                 <div class="play-sorter">
-                    <span class="sort-control-group" data-act="isplay-click" data-val="{isplay:1}" data-href="?isPlay=1" onclick="location.href=this.getAttribute('data-href')">
+                    <span class="sort-control-group" data-act="isplay-click" data-val="{isplay:1}" data-href="?isPlay=1" @click="toparent('')">
                         <span class="sort-control sort-checkbox"></span>
                         <span class="sort-control-label">可播放</span>
                     </span>
@@ -55,9 +55,9 @@
                     <div class="channel-detail movie-item-title" title="后来的我们">
                         <a :href="item.videourl" target="_blank">{{item.nm}}</a>
                     </div>
-                    <!-- <div class="channel-detail movie-item-desc">
+                    <div class="channel-detail movie-item-desc">
                       {{item.desc}}
-                    </div> -->
+                    </div>
                     <div class="channel-detail movie-item-desc">
                       上映时间:{{item.rt}}
                     </div>
@@ -72,6 +72,9 @@
     methods: {
         editeImg(url) {
             return url.replace('w.h/','')+'@214w_297h_1e_1c'
+        },
+        toparent(val){
+          this.$emit('getChild',val)
         }
     }
  }

@@ -3,7 +3,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'vue-nuxt',
+    title: 'ycy',
     meta: [
       { name: 'renderer', content: 'webkit'},
       { name: 'force-rendering', content: 'webkit'},

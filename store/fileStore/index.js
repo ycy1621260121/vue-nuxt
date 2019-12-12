@@ -2,13 +2,18 @@ import * as types  from './mutationType'
 import * as actions from './actions'
 
 const state = ()=> ({
-    data: {        
-    }
+    data: {},
 })
 
 const mutations = {
-    [types.HOT] (state, result) {       
-        state.data = result
+    /*[types.HOT] (state, result) {
+        state.data = result.data
+    },*/
+    setHotData(state, result) {
+        state.data = result.data
+    },
+    getRedData(state,result){
+      state.data = result.data;
     }
 }
 export default {
