@@ -5,21 +5,26 @@
     <!-- <nuxt-link :to="{ name: 'home'}">
       home 页面
     </nuxt-link> -->
+    <TabBar/>
   </div>
 </template>
 
 <script>
 import Menu from '~/components/menu.vue';
+import TabBar from '~/components/TabBar.vue';
 import List from '~/components/list.vue';
 import axios from '~/plugins/axios';
 import { mapState, mapActions } from 'vuex';
 export default {
   components: {
     Menu,
-    List
+    List,
+    TabBar
   },
   data() {
-    return {};
+    return {
+
+    };
   },
   computed: {
     ...mapState({
@@ -33,10 +38,12 @@ export default {
       data: res.data
     };
   },
-  created: function() {
+  async created() {
     //首页数据提交给vuex
     this.$store.commit('getRedData', this.data);
     //console.log("页面加载完毕！");
+    let ress = await axios(`http://106.13.69.59:8098/tenctent`);
+    console.log(ress);
   },
   mounted() {
     sessionStorage.setItem('nuxtRedData', JSON.stringify(this.data));

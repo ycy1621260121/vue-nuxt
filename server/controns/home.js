@@ -1,7 +1,13 @@
 let router = require("express")();
 let axios = require("axios");
-
+let xss = require('xss');
+let cookieParser = require('cookie-parser')
+let csrf = require('csurf');
+ /* csrf */
+let csrfProtection = csrf({ cookie: true });
+router.use(cookieParser())
 router.get("/api/getRed", async (ctx, next) => {
+  var params = xss(ctx.query.id);
   await axios({
     url: "https://bj.meituan.com/ptapi/getHotFilms?ci=1&limit=30",
     method: "get",

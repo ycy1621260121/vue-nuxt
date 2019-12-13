@@ -88,7 +88,7 @@
 .list {
   width: 20rem;
   margin:0 auto;
-  padding-bottom: 20px;
+  padding-bottom: 56px;
   overflow: hidden;
   .movies-panel {
     margin-top: 40px;

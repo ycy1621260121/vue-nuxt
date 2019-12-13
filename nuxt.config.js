@@ -9,7 +9,7 @@ module.exports = {
       { name: 'force-rendering', content: 'webkit'},
       { 'http-equiv': 'X-UA-Compatible', content: 'IE=Edge,chrome=1'},
       { name: 'baidu-site-verification', content: 'mREHhDF8nW'},
-      
+
       /*以上是设置双核浏览器默认状态下使用极速模式打开*/
       { charset: 'utf-8' },
       { hid: 'description', name: 'description', content: 'nuxt'},
@@ -21,12 +21,12 @@ module.exports = {
     ],
     script: [
       {src: 'http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js'},
-    ]
+    ],
   },
   /*
   ** Customize the progress bar color
   */
-  loading: { color: '#fff6464' },
+  loading: { color: '#ff6464' },
   /*
   ** Build configuration
   */
