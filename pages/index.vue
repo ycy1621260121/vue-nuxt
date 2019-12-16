@@ -38,18 +38,14 @@ export default {
       data: res.data
     };
   },
-  async created() {
+  created() {
     //首页数据提交给vuex
     this.$store.commit('getRedData', this.data);
-    //console.log("页面加载完毕！");
-    let ress = await axios(`http://106.13.69.59:8098/tenctent`);
-    console.log(ress);
+    //console.log("页面加载完毕！");;
   },
-  mounted() {
-    sessionStorage.setItem('nuxtRedData', JSON.stringify(this.data));
-    //隐藏显示浏览器Network接口， 在/fileStore/action.js
-    //如果需要用到store，请求这个接口，上面的hotList的数据改为'hotData'
-    //this.$store.dispatch('getHotFile');
+  async mounted() {
+    let res = await axios(`/api/baidu`);
+    console.log(res.data.data)
   },
   methods: {
     keysort(data, key, sortType) {
