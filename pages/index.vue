@@ -45,7 +45,8 @@ export default {
   },
   async mounted() {
     let res = await axios(`/api/baidu`);
-    console.log(res.data.data)
+    console.log(res.data.data);
+    sessionStorage.setItem('nuxtRedData',JSON.stringify(this.data));
   },
   methods: {
     keysort(data, key, sortType) {
