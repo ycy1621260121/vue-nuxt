@@ -13,7 +13,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "backpack-core": "^0.7.0",
     "cookie-parser": "^1.4.4",
     "cross-env": "^5.1.4",
